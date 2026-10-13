@@ -27,7 +27,7 @@ Taxi | LAX Mini=US
 
 ## 生效方式
 
-保存配置后刷新 Komari 页面。插件继续使用 1.1.3 的 HTTP `/api/*` 响应与 WebSocket `/api/*` 发送钩子，并在日志中输出当前匹配模式及实际修改数量。日志中的 `loaded N rule(s)` 仅表示规则已读取；`patched N node object(s)` 表示实际匹配并修改了对象。
+保存配置后刷新 Komari 页面。插件使用 HTTP `/api/*` 响应与 WebSocket `/api/*` 发送钩子，并在日志中输出当前匹配模式及实际修改数量。日志中的 `loaded N rule(s)` 仅表示规则已读取；`patched N node object(s)` 表示实际匹配并修改了对象。
 
 ## 注意
 
