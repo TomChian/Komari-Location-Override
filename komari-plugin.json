@@ -1,0 +1,39 @@
+{
+  "name": {
+    "zh_CN": "地区识别手动修正",
+    "en": "Manual Server Location Override"
+  },
+  "short": "override-location",
+  "description": "可选择按节点名称或 UUID 覆盖地区代码，处理 HTTP API 与实时 RPC/WebSocket 数据。",
+  "author": "祁同伟",
+  "version": "1.1.5",
+  "entry": "script.js",
+  "permissions": {
+    "allowHooks": true,
+    "maxHTTPBodyBytes": 33554432,
+    "timeout": 10
+  },
+  "configuration": {
+    "type": "managed",
+    "data": [
+      {
+        "key": "match_mode",
+        "name": "地区修正匹配方式",
+        "type": "select",
+        "default": "按节点名称匹配",
+        "options": "按节点名称匹配,按 UUID 匹配",
+        "description": "选择一种匹配方式；下方规则按所选方式解释，不会同时混合匹配。",
+        "required": true
+      },
+      {
+        "key": "rules_text",
+        "name": "地区修正规则（每行：匹配值=地区代码）",
+        "type": "richtext",
+        "default": "Taxi｜LAX Mini=US",
+        "description": "按节点名称模式：节点名称=地区代码（支持精确及包含匹配）；按 UUID 模式：UUID=地区代码（仅精确匹配）。代码使用两个英文字母，例如 JP、US、HK、TW、SG、DE、GB。",
+        "required": false
+      }
+    ]
+  },
+  "icon": "assets/globe.svg"
+}
